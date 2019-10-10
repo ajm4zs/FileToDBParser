@@ -19,7 +19,7 @@ if __name__ == '__main__':
                         help='[Optional] 1 if we want to drop table if already exists.  If 0 and table already exists, rows will be appended.', choices=range(0, 2), default=1, type=int)
     parser.add_argument('--fileType', '-ft', required=False,
                         help='[Optional] What is the type of file we are processing? Default value is JSON.', choices=['XML', 'JSON'], default='JSON')
-    parser.add_argument('--xmlTag', '-xt', required=False, help='[Optional] Which XML tag under root should be pull data from.', default=None)
+    parser.add_argument('--xmlTag', '-xt', required=False, help='[Optional] Which XML tag under root should we pull data from.', default=None)
     args = parser.parse_args()
 
     print('Check XML tag here')

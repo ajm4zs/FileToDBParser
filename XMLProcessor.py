@@ -38,7 +38,7 @@ class XMLProcessor:
         row_list = self.recurse_xml_tag(xmltag)
         # Without nested elements, row_list is sufficient for output.
         # With nested elements, row_list produces a list of dictionaries with uneven fields. This needs to be combined to produce a list of dictionaries with same fields.
-        if set(row_list[0]) == set(row_list[1]):
+        if len(set(row_list[0]).intersection(set(row_list[1]))) > 0:
             file_contents = row_list
         else:
             row_dict = dict((key,d[key]) for d in row_list for key in d)
